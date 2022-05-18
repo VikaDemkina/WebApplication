@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple Web Application
+[Service]
+ExecStart=/usr/bin/dotnet /var/www/app/WebApplication.dll
+SyslogIdentifier=WebApplication
+User=vika
+Environment=DOTNET_ROOT=/usr/lib64/dotnet
+[Install]
+WantedBy=multi-user.target
+17)sudo systemctl daemon-reload
+sudo systemctl start WebApplication
